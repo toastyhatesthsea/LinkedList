@@ -31,7 +31,7 @@ class MyLinkedList {
         Node current = head;
         for(int i=0; i < index && current != null; i++)
         {
-            current = current.next;
+            current = current.link;
         }
 
         if (current == null)
@@ -40,7 +40,7 @@ class MyLinkedList {
         }
         else
         {
-            return (int)current.val;
+            return (int)current.data;
         }
     }
 
@@ -49,20 +49,32 @@ class MyLinkedList {
 
         if (head == null)
         {
-            head = new MyLinkedList();
+            head = new Node(val, null);
+            tail = head;
             this.val = val;
         }
         else
         {
-            MyLinkedList oldHead = this.head;
-            head = new MyLinkedList();
+            Node oldHead = this.head;
+            head = new Node(val, oldHead);
             this.val = val;
-            next = oldHead;
         }
     }
 
     /** Append a node of value val to the last element of the linked list. */
     public void addAtTail(int val) {
+
+        //No objects have been assigned yet
+        if (tail == null)
+        {
+            tail = new Node(val, null);
+            head = tail;
+        }
+        else
+        {
+            tail.link = new Node(val, null);
+            tail = tail.link;
+        }
 
     }
 
@@ -73,6 +85,14 @@ class MyLinkedList {
 
     /** Delete the index-th node in the linked list, if the index is valid. */
     public void deleteAtIndex(int index) {
+
+        Node current = head;
+        Node beforeCurrent = current;
+
+        for(int i=0; i < index && current != null; i++)
+        {
+
+        }
 
     }
 }
@@ -95,5 +115,6 @@ class LinkedTesters
 
         aList.addAtHead((int)1);
         int value = aList.get(0);
+
     }
 }
