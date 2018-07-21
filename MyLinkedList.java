@@ -91,7 +91,21 @@ class MyLinkedList {
 
         for(int i=0; i < index && current != null; i++)
         {
+            beforeCurrent = current;
+            current = current.link;
+        }
 
+        if (current != null)
+        {
+            //Only one Node
+            if (current == beforeCurrent)
+            {
+                current = null;
+            }
+            else
+            {
+                beforeCurrent.link = current.link;
+            }
         }
 
     }
