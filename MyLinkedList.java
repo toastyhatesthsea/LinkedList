@@ -21,9 +21,17 @@ class MyLinkedList {
         MyLinkedList current = head;
         for(int i=0; i <=index && current != null; i++)
         {
-
+            current = current.next;
         }
 
+        if (current == null)
+        {
+            return -1;
+        }
+        else
+        {
+            return (int)current.val;
+        }
     }
 
     /** Add a node of value val before the first element of the linked list. After the insertion, the new node will be the first node of the linked list. */
@@ -73,8 +81,9 @@ class LinkedTesters
 {
     public static void main(String[] arsgsg)
     {
-        LinkedList listers = new LinkedList();
+        MyLinkedList aList = new MyLinkedList();
 
-        listers.
+        aList.addAtHead(1);
+        int value = aList.get(0);
     }
 }
