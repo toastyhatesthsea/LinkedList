@@ -4,22 +4,32 @@ import java.util.LinkedList;
 
 class MyLinkedList {
 
-    private Object val;
-    private MyLinkedList next;
-    private MyLinkedList head;
+    class Node
+    {
+        private Node link;
+        private Object data;
+
+        public Node(Object data, Node aLink)
+        {
+            this.data = data;
+            link = aLink;
+        }
+    }
+
+    private int val;
+    private Node tail;
+    private Node head;
 
     /** Initialize your data structure here. */
     public MyLinkedList() {
-
-        this.val = new Object();
 
     }
 
     /** Get the value of the index-th node in the linked list. If the index is invalid, return -1. */
     public int get(int index) {
 
-        MyLinkedList current = head;
-        for(int i=0; i <=index && current != null; i++)
+        Node current = head;
+        for(int i=0; i < index && current != null; i++)
         {
             current = current.next;
         }
@@ -39,15 +49,15 @@ class MyLinkedList {
 
         if (head == null)
         {
-            this.head = new MyLinkedList();
+            head = new MyLinkedList();
             this.val = val;
         }
         else
         {
             MyLinkedList oldHead = this.head;
-            this.head = new MyLinkedList();
+            head = new MyLinkedList();
             this.val = val;
-            this.next = oldHead;
+            next = oldHead;
         }
     }
 
@@ -83,7 +93,7 @@ class LinkedTesters
     {
         MyLinkedList aList = new MyLinkedList();
 
-        aList.addAtHead(1);
+        aList.addAtHead((int)1);
         int value = aList.get(0);
     }
 }
