@@ -101,7 +101,20 @@ class MyLinkedList {
         {
             if (index == 0)
             {
+                Node newNode = new Node(val, head);
+                head = newNode;
+            }
+            else
+            {
+                Node current = head;
 
+                for(int i=0; i<index; i++)
+                {
+                    current = current.link;
+                }
+
+                Node newNode = new Node(val, current.link);
+                current.link = newNode;
             }
         }
 
