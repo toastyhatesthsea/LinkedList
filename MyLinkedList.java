@@ -97,6 +97,7 @@ class MyLinkedList {
                 tail.link = newNode;
                 tail = newNode;
             }
+            size++;
         } else if (index < size && index >= 0)
         {
             if (index == 0)
@@ -108,7 +109,7 @@ class MyLinkedList {
             {
                 Node current = head;
 
-                for(int i=0; i<index; i++)
+                for(int i=0; i<index-1; i++)
                 {
                     current = current.link;
                 }
@@ -116,6 +117,7 @@ class MyLinkedList {
                 Node newNode = new Node(val, current.link);
                 current.link = newNode;
             }
+            size++;
         }
 
     }
@@ -148,6 +150,16 @@ class MyLinkedList {
         }
 
     }
+
+    public void printList()
+    {
+        Node current = head;
+        while (current != null)
+        {
+            System.out.println(current.data);
+            current = current.link;
+        }
+    }
 }
 
 /**
@@ -166,20 +178,23 @@ class LinkedTesters
     {
         MyLinkedList aList = new MyLinkedList();
 
-        aList.addAtHead(1);
+        /*aList.addAtHead(1);
         aList.addAtHead(2);
         //int value = aList.get(0);
+        aList.addAtIndex(0, 3);
+        aList.addAtHead(55);
+        aList.addAtTail(100);
+        aList.addAtIndex(2, 99);*/
+
+        aList.addAtHead(1);
+        aList.addAtTail(3);
+        aList.addAtIndex(1, 2);
+        aList.get(1);
         aList.deleteAtIndex(1);
+        aList.get(1);
+
+        aList.printList();
 
     }
 }
 
-class LinkedListIterator
-{
-    public static void printList(MyLinkedList aNode)
-    {
-
-    }
-
-
-}
