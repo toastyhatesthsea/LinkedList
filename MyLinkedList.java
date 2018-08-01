@@ -19,6 +19,7 @@ class MyLinkedList {
     private int val;
     private Node tail;
     private Node head;
+    private int size;
 
     /** Initialize your data structure here. */
     public MyLinkedList() {
@@ -59,6 +60,7 @@ class MyLinkedList {
             head = new Node(val, oldHead);
             this.val = val;
         }
+        size++;
     }
 
     /** Append a node of value val to the last element of the linked list. */
@@ -81,6 +83,28 @@ class MyLinkedList {
     /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
     public void addAtIndex(int index, int val) {
 
+        if (index == size)
+        {
+            if (head == tail)
+            {
+                Node newNode = new Node(val, null);
+                head.link = newNode;
+                tail = newNode;
+            }
+            else
+            {
+                Node newNode = new Node(val, null);
+                tail.link = newNode;
+                tail = newNode;
+            }
+        } else if (index < size && index >= 0)
+        {
+            if (index == 0)
+            {
+
+            }
+        }
+
     }
 
     /** Delete the index-th node in the linked list, if the index is valid. */
@@ -95,17 +119,19 @@ class MyLinkedList {
             current = current.link;
         }
 
-        if (current != null)
+        if (index == 0 && current != null)
         {
-            //Only one Node
-            if (current == beforeCurrent)
+            head = head.link;
+            //Reset tail if node only has one value left
+            if (head.link == null)
             {
-                current = null;
+                tail = head;
             }
-            else
-            {
-                beforeCurrent.link = current.link;
-            }
+            size--;
+        } else if (current != null)
+        {
+            beforeCurrent.link = current.link;
+            size--;
         }
 
     }
@@ -127,8 +153,20 @@ class LinkedTesters
     {
         MyLinkedList aList = new MyLinkedList();
 
-        aList.addAtHead((int)1);
-        int value = aList.get(0);
+        aList.addAtHead(1);
+        aList.addAtHead(2);
+        //int value = aList.get(0);
+        aList.deleteAtIndex(1);
 
     }
+}
+
+class LinkedListIterator
+{
+    public static void printList(MyLinkedList aNode)
+    {
+
+    }
+
+
 }
