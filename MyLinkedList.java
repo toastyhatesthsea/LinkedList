@@ -87,36 +87,25 @@ class MyLinkedList {
             tail = newTail;
         }
         size++;
-
     }
 
     /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
     public void addAtIndex(int index, int val) {
 
-        if (index == size)
+        if (index == size && head == tail) //Index at tail
         {
-            if (head == tail) //Small list
-            {
                 Node newNode = new Node(val, null);
                 if (head == null)//List is empty
                 {
                     head = newNode;
                     tail = head;
-                }
-                else
+                } else
                 {
                     Node oldHead = head;
                     head = newNode;
                     head.link = oldHead;
                     tail = oldHead;
                 }
-            }
-            else
-            {
-                Node newNode = new Node(val, null);
-                tail.link = newNode;
-                tail = newNode;
-            }
             size++;
         } else if (index < size && index >= 0)
         {
@@ -124,12 +113,11 @@ class MyLinkedList {
             {
                 Node newNode = new Node(val, head);
                 head = newNode;
-            }
-            else
+            } else
             {
                 Node current = head;
 
-                for(int i=0; i<index-1; i++)
+                for (int i = 0; i < index - 1; i++)
                 {
                     current = current.link;
                 }
@@ -233,7 +221,9 @@ class LinkedTesters
         aList.addAtTail(5);
         aList.addAtTail(6);
         aList.addAtTail(10);
-
+        aList.addAtHead(1);
+        aList.addAtHead(2);
+        aList.addAtHead(3);
         aList.printList();
 
                /* ["MyLinkedList", "addAtHead", "get", "addAtTail", "deleteAtIndex", "addAtHead", "deleteAtIndex", "get", "addAtTail", "addAtHead", "addAtTail", "addAtTail", "addAtTail", "addAtIndex", "get", "addAtIndex", "addAtHead", "deleteAtIndex", "addAtIndex", "addAtHead", "addAtIndex", "deleteAtIndex", "get", "addAtTail", "deleteAtIndex", "deleteAtIndex", "addAtTail", "addAtTail", "addAtIndex", "addAtHead", "get", "get", "addAtTail", "addAtTail", "addAtTail", "addAtTail", "addAtIndex", "addAtIndex", "addAtHead", "addAtIndex", "addAtTail", "addAtHead", "addAtHead", "addAtHead", "addAtHead", "addAtHead", "addAtHead", "addAtTail", "addAtHead", "deleteAtIndex", "addAtHead", "get", "addAtHead", "get", "addAtHead", "addAtHead", "addAtHead", "addAtIndex", "deleteAtIndex", "addAtTail", "deleteAtIndex", "get", "addAtIndex", "addAtHead", "addAtTail", "deleteAtIndex", "addAtHead", "addAtIndex", "deleteAtIndex", "deleteAtIndex", "deleteAtIndex", "addAtHead", "addAtTail", "addAtTail", "addAtHead", "addAtTail", "addAtIndex", "deleteAtIndex", "deleteAtIndex", "addAtIndex", "addAtHead", "addAtHead", "addAtTail", "get", "addAtIndex", "get", "addAtHead", "addAtHead", "addAtHead", "addAtIndex", "addAtIndex", "get", "addAtHead", "get", "get", "addAtTail", "addAtHead", "addAtHead", "addAtTail", "addAtTail", "get", "addAtTail"]
