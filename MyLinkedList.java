@@ -92,7 +92,7 @@ class MyLinkedList {
     /** Add a node of value val before the index-th node in the linked list. If index equals to the length of linked list, the node will be appended to the end of linked list. If index is greater than the length, the node will not be inserted. */
     public void addAtIndex(int index, int val) {
 
-        if (index == size && head == tail) //Index at tail
+        if (index == size && head == tail) //List is 1 or less
         {
                 Node newNode = new Node(val, null);
                 if (head == null)//List is empty
@@ -126,6 +126,11 @@ class MyLinkedList {
                 current.link = newNode;
             }
             size++;
+        } else if (index == size) //list not empty, index at end
+        {
+            Node newTail = new Node(val, null);
+            tail.link = newTail;
+            tail = newTail;
         }
 
     }
@@ -136,12 +141,13 @@ class MyLinkedList {
         Node current = head;
         Node beforeCurrent = current;
 
-        for(int i=0; i < index && current != null; i++)
+        for (int i = 0; i < (index - 1) && current != null; i++)
         {
             beforeCurrent = current;
             current = current.link;
         }
 
+        //At head
         if (index == 0 && current != null)
         {
             head = head.link;
@@ -151,10 +157,13 @@ class MyLinkedList {
                 tail = head;
             }
             size--;
+        }
+        else if (current != null && current.link.link != null)
+        {
+            current.link = current.link.link;
         } else if (current != null)
         {
-            beforeCurrent.link = current.link;
-            size--;
+            current.link = null;
         }
 
     }
@@ -218,12 +227,17 @@ class LinkedTesters
         aList.deleteAtIndex(2);
         aList.get(1);
         aList.addAtTail(24);*/
-        aList.addAtTail(5);
+        /*aList.addAtTail(5);
         aList.addAtTail(6);
         aList.addAtTail(10);
         aList.addAtHead(1);
         aList.addAtHead(2);
-        aList.addAtHead(3);
+        aList.addAtHead(3);*/
+        aList.addAtIndex(0, 100);
+        aList.addAtHead(500);
+        aList.addAtTail(900);
+        //aList.deleteAtIndex(2);
+        aList.addAtIndex(2, 300);
         aList.printList();
 
                /* ["MyLinkedList", "addAtHead", "get", "addAtTail", "deleteAtIndex", "addAtHead", "deleteAtIndex", "get", "addAtTail", "addAtHead", "addAtTail", "addAtTail", "addAtTail", "addAtIndex", "get", "addAtIndex", "addAtHead", "deleteAtIndex", "addAtIndex", "addAtHead", "addAtIndex", "deleteAtIndex", "get", "addAtTail", "deleteAtIndex", "deleteAtIndex", "addAtTail", "addAtTail", "addAtIndex", "addAtHead", "get", "get", "addAtTail", "addAtTail", "addAtTail", "addAtTail", "addAtIndex", "addAtIndex", "addAtHead", "addAtIndex", "addAtTail", "addAtHead", "addAtHead", "addAtHead", "addAtHead", "addAtHead", "addAtHead", "addAtTail", "addAtHead", "deleteAtIndex", "addAtHead", "get", "addAtHead", "get", "addAtHead", "addAtHead", "addAtHead", "addAtIndex", "deleteAtIndex", "addAtTail", "deleteAtIndex", "get", "addAtIndex", "addAtHead", "addAtTail", "deleteAtIndex", "addAtHead", "addAtIndex", "deleteAtIndex", "deleteAtIndex", "deleteAtIndex", "addAtHead", "addAtTail", "addAtTail", "addAtHead", "addAtTail", "addAtIndex", "deleteAtIndex", "deleteAtIndex", "addAtIndex", "addAtHead", "addAtHead", "addAtTail", "get", "addAtIndex", "get", "addAtHead", "addAtHead", "addAtHead", "addAtIndex", "addAtIndex", "get", "addAtHead", "get", "get", "addAtTail", "addAtHead", "addAtHead", "addAtTail", "addAtTail", "get", "addAtTail"]
