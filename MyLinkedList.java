@@ -236,7 +236,7 @@ class LinkedTesters
         aList.addAtIndex(0, 100);
         aList.addAtHead(500);
         aList.addAtTail(900);
-        //aList.deleteAtIndex(2);
+        aList.deleteAtIndex(0);
         aList.addAtIndex(2, 300);
         aList.printList();
 
