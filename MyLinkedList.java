@@ -166,10 +166,12 @@ class MyLinkedList {
             else if (current != null && current.link != null && current.link.link != null)
             {
                 current.link = current.link.link;
+                size--;
             } else if (current != null) //Deleting last link
             {
                 current.link = null;
                 tail = current;
+                size--;
             }
         }
 
@@ -283,15 +285,156 @@ class LinkedTesters
         listers.addAtHead(39);
         listers.get(1);
         listers.addAtIndex(2, 53);
-        listers.printList();
+        //listers.printList();
         System.out.println();
 
         listers.addAtIndex(2, 56);
-        System.out.println(listers.get(2));
+        //System.out.println(listers.get(2));
         listers.addAtHead(0);
 
+        MyLinkedList myLink = new MyLinkedList();
+
+        myLink.addAtHead(41);
+        myLink.addAtHead(5);
+        myLink.addAtTail(37);
+        myLink.addAtHead(88);
+        myLink.addAtIndex(1, 83);
+        myLink.addAtTail(9);
+        myLink.get(1);
+        myLink.deleteAtIndex(1);
+        myLink.get(3);
+        myLink.addAtTail(12);
+        myLink.addAtTail(91);
+        myLink.get(3);
+        myLink.addAtTail(2);
+        myLink.get(4);
+        myLink.get(1);
+        myLink.addAtIndex(5, 78);
+        myLink.addAtTail(15);
+        myLink.deleteAtIndex(1);
+        myLink.addAtHead(35);
+        myLink.deleteAtIndex(6);
+        myLink.addAtTail(63);
+        myLink.addAtHead(71);
+        myLink.addAtHead(30);
+        myLink.addAtHead(11);
+        myLink.deleteAtIndex(10);
+        myLink.addAtHead(49);
+        myLink.get(5);
+        myLink.addAtTail(16);
+        myLink.addAtIndex(10, 36);
+        myLink.addAtIndex(7, 91);
+        myLink.addAtHead(12);
+        myLink.addAtHead(56);
+        myLink.addAtHead(22);
+        myLink.deleteAtIndex(10);
+        myLink.addAtHead(43);
+        myLink.addAtTail(46);
+        myLink.addAtTail(73);
+        myLink.addAtIndex(20, 32);
+        myLink.addAtTail(67);
+        myLink.addAtTail(62);
+        myLink.addAtHead(24);
+        myLink.addAtTail(73);
+        myLink.deleteAtIndex(3);
+        myLink.addAtIndex(4, 66);
+        myLink.addAtIndex(10, 5);
+        myLink.addAtTail(72);
+        myLink.deleteAtIndex(23);
+        myLink.get(7);
+        myLink.deleteAtIndex(3);
+        myLink.addAtTail(11);
+        myLink.deleteAtIndex(1);
+        myLink.addAtTail(94);
+        myLink.get(1);
+        myLink.addAtIndex(15, 55);
+        myLink.addAtTail(88);
+        myLink.addAtTail(47);
+        myLink.addAtIndex(20, 27);
+        myLink.addAtIndex(14, 9);
+        myLink.addAtHead(53);
+        myLink.addAtHead(13);
+        myLink.get(16);
+        myLink.get(6);
+        myLink.deleteAtIndex(27);
+        myLink.deleteAtIndex(16);
+        myLink.addAtHead(94);
+        myLink.addAtHead(35);
+        myLink.addAtIndex(34, 64);
+        myLink.addAtTail(91);
+        myLink.addAtTail(14);
+        myLink.addAtHead(94);
+        myLink.addAtHead(4);
+        myLink.addAtHead(89);
+        myLink.addAtHead(21);
+        myLink.addAtTail(16);
+        myLink.addAtTail(56);
+        myLink.addAtHead(37);
+        myLink.addAtHead(16);
+        System.out.println(myLink.get(44));
+        //System.out.println(myLink.get(42));
+        //System.out.println("\n)");
+        //myLink.printList();
 
 
+
+        myLink.addAtHead(51);
+        myLink.addAtHead(4);
+        myLink.addAtHead(31);
+        myLink.addAtIndex(18, 21);
+        myLink.addAtTail(76);
+        myLink.addAtTail(74);
+        myLink.deleteAtIndex(2);
+        myLink.addAtHead(23);
+        myLink.addAtTail(65);
+        myLink.addAtTail(73);
+        myLink.addAtTail(37);
+        myLink.addAtHead(14);
+
+        /*["MyLinkedList","addAtHead","addAtHead","addAtTail","addAtHead","addAtIndex","addAtTail","get","deleteAtIndex","get",
+        "addAtTail","addAtTail","get","addAtTail","get","get","addAtIndex","addAtTail","deleteAtIndex","addAtHead",
+        "deleteAtIndex","addAtTail","addAtHead","addAtHead","addAtHead","deleteAtIndex","addAtHead","//get","//addAtTail",
+        "//addAtIndex","//addAtIndex","//addAtHead","//addAtHead","//addAtHead","//deleteAtIndex","//addAtHead","//addAtTail","//addAtTail",
+        "//addAtIndex","//addAtTail","//addAtTail","//addAtHead","//addAtTail","//deleteAtIndex","//addAtIndex","//addAtIndex","//addAtTail",
+        "//deleteAtIndex","//get","//deleteAtIndex","//addAtTail","//deleteAtIndex","//addAtTail","//get","//addAtIndex","//addAtTail","//addAtTail",
+        "//addAtIndex","//addAtIndex","//addAtHead","//addAtHead","//get","//get","//deleteAtIndex","//deleteAtIndex","//addAtHead","//addAtHead",
+        "//addAtIndex",
+        "//addAtTail",
+        "//addAtTail",
+        "//addAtHead",
+        "//addAtHead",
+        "//addAtHead",
+        "//addAtHead",
+        "//addAtTail","
+        //addAtTail","
+        //addAtHead",
+        "//addAtHead",
+        "//get",
+        "//addAtHead",
+        "//addAtHead",
+        "//addAtHead",
+        "//addAtIndex",
+        "//addAtTail",
+        "//addAtTail",
+        "//deleteAtIndex",
+        "//addAtHead",
+        "//addAtTail",
+        "//addAtTail",
+        "//addAtTail",
+        "//addAtHead","addAtTail","addAtIndex","addAtHead","addAtTail","addAtIndex","addAtTail",
+        "addAtHead","deleteAtIndex","addAtTail","addAtHead","get"]
+        [[],[41],[5],[37],[88],[1,83],[9],[1],[1],[3],[12],[91],[3],[2],[4],[1],[5,78],[15],[1],[35],[6],[63],[71],[30],[11],[10],[49],
+        [5],[//16],[//10,36],[//7,91],[//12],[//56],[//22],[//10],[//43],[//46],[//73],[//20,32],[//67],[//62],[//24],[//73],[//3],[//4,66],[//10,5],
+        [//72],[//23],[//7],[//3],[//11],
+        [//1],[//94],[//1],[//15,55],[//88],[//47],[//20,27],[//14,9],[//53],[//13],[//16],[//6],[//27],[//16],[//94],[//35],[//34,64],
+        [//91],
+        [//14],
+        [//94],
+        [//4],[//89],[//21],[//16],
+        [//56],[//37],[//16],
+        [//44],[//51],[//4],[//31],
+        [//18,21],[//76],
+        [//74],[//2],[//23],[//65],[//73],[//37],[//14],[73],[10,59],[7],[73],[28,8],[9],[53],[44],[18],[72],[7]]*/
 
 
 
