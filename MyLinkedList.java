@@ -133,6 +133,7 @@ class MyLinkedList {
             Node newTail = new Node(val, null);
             tail.link = newTail;
             tail = newTail;
+            size++;
         }
 
     }
@@ -262,18 +263,41 @@ class LinkedTesters
         //aList.deleteAtIndex(2);
         aList.addAtHead(26);
         aList.deleteAtIndex(2);
-        aList.printList();
+        //aList.printList();
         aList.get(1);
         aList.addAtTail(24);
         System.out.println();
-        aList.printList();
+        //aList.printList();
         aList.addAtHead(15);
         aList.addAtTail(0);
         aList.addAtTail(13);
         aList.addAtTail(1);
-        aList.printList();
+        //aList.printList();
         aList.addAtIndex(6, 33);
         //System.out.println(aList.get(6));
+
+        MyLinkedList listers = new MyLinkedList();
+
+        listers.addAtHead(47);
+        listers.get(1);
+        listers.addAtHead(39);
+        listers.get(1);
+        listers.addAtIndex(2, 53);
+        listers.printList();
+        System.out.println();
+
+        listers.addAtIndex(2, 56);
+        System.out.println(listers.get(2));
+        listers.addAtHead(0);
+
+
+
+
+
+
+
+        /*["MyLinkedList","addAtHead","get","addAtHead","get","addAtIndex","addAtIndex","addAtHead","get","addAtHead","addAtTail","addAtHead","get","deleteAtIndex","deleteAtIndex","addAtHead","addAtHead","addAtHead","addAtIndex","addAtHead","addAtTail","deleteAtIndex","deleteAtIndex","addAtTail","get","addAtTail","addAtHead","get","get","get","addAtTail","addAtIndex","addAtTail","addAtHead","addAtTail","addAtIndex","get","addAtTail","addAtHead","addAtIndex","addAtHead","addAtIndex","addAtTail","addAtIndex","addAtIndex","addAtTail","addAtTail","addAtHead","addAtTail","addAtTail","addAtTail","addAtHead","get","get","get","addAtHead","addAtTail","addAtHead","addAtTail","deleteAtIndex","addAtHead","addAtHead","addAtIndex","get","addAtHead","addAtTail","addAtHead","addAtHead","addAtTail","addAtTail","get","get","deleteAtIndex","get","addAtTail","addAtTail","addAtTail","deleteAtIndex","deleteAtIndex","addAtHead","addAtHead","deleteAtIndex","get","get","addAtHead","addAtTail","addAtTail","get","addAtTail","deleteAtIndex","addAtTail","deleteAtIndex","deleteAtIndex","addAtTail","get","addAtTail","addAtTail","deleteAtIndex","deleteAtIndex","addAtTail","addAtHead","get"]
+[[],[47],[1],[39],[1],[2,53],[2,56],[0],[3],[2],[62],[58],[6],[3],[1],[0],[25],[68],[1,37],[94],[83],[5],[7],[47],[1],[3],[6],[7],[9],[5],[72],[3,32],[61],[95],[74],[5,56],[14],[57],[16],[17,10],[93],[11,87],[18],[17,83],[23,6],[67],[6],[53],[67],[80],[69],[59],[23],[34],[7],[64],[46],[76],[28],[23],[4],[58],[3,15],[5],[3],[86],[39],[2],[9],[89],[9],[44],[38],[33],[70],[16],[91],[43],[41],[52],[95],[14],[30],[8],[80],[7],[60],[5],[14],[9],[31],[4],[2],[34],[10],[36],[37],[40],[11],[97],[32],[33]]*/
 
 
         //aList.printList();
